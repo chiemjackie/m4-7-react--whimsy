@@ -13,10 +13,10 @@ const Tweet = () => {
     tweetContents,
     isRetweetedByCurrentUser,
     isLikedByCurrentUser,
+    date,
   } = useContext(TweetContext);
 
-  // const value = useContext(TweetContext);
-  // console.log(value);
+  console.log(date);
 
   return (
     <Wrapper>
@@ -26,6 +26,7 @@ const Tweet = () => {
         avatarSrc={avatarSrc}
       />
       <TweetContents>{tweetContents}</TweetContents>
+      <Timestamp>{date}</Timestamp>
       <Divider />
       <ActionBar
         isRetweetedByCurrentUser={isRetweetedByCurrentUser}
