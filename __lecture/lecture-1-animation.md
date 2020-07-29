@@ -98,6 +98,8 @@ Produce the following animations
 
 https://codesandbox.io/s/floral-dream-d517n
 
+const Surface = styled(ButtonLayer)`z-index: 2; background: hotpink; color: white; text-shadow: 1px 1px 2px mediumvioletred; display: flex; justify-content: center; align-items: center; font-size: 32px; transition: transform 100ms; &:hover { transform: translate(-5px, -5px); }`;
+
 ---
 
 https://codesandbox.io/s/beautiful-ishizaka-c48ho?file=/src/App.js
