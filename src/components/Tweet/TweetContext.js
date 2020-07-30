@@ -13,6 +13,16 @@ export const TweetProvider = ({ children }) => {
 
   const date = moment().format("LT - ll");
 
+  const handleLike = () => {
+    isLiked ? setLikes(likes - 1) : setLikes(likes + 1);
+    setIsLiked(!isLiked);
+  };
+
+  const handleRetweet = () => {
+    isRetweeted ? setRetweets(retweets - 1) : setRetweets(retweets + 1);
+    setIsRetweeted(!isRetweeted);
+  };
+
   return (
     <TweetContext.Provider
       value={{
@@ -20,11 +30,13 @@ export const TweetProvider = ({ children }) => {
         displayName: "Carmen Sandiego ✨",
         username: "carmen-sandiego",
         avatarSrc: avatar,
-        isLikedByCurrentUser: isLiked,
-        isRetweetedByCurrentUser: isRetweeted,
+        isLiked: isLiked,
+        isRetweeted: isRetweeted,
         date: date,
         likes,
         retweets,
+        handleLike,
+        handleRetweet,
       }}
     >
       {children}
